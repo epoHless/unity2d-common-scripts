@@ -3,7 +3,7 @@
 /// <summary>
 /// This is the component that will deal damage to our GameObjects
 /// </summary>
-public class DamageComponent : MonoBehaviour
+public abstract class DamageComponent : MonoBehaviour
 {
     [SerializeField] protected int damage;
 
