@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using epoHless;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 /// <summary>
 /// The BulletPooler will spawn bullets and shoot them every fireRate time, setting their direction.
@@ -6,22 +9,21 @@
 public class BulletPooler : ObjectPooler<Bullet>
 {
     [SerializeField] private float fireRate = 0.3f;
-    private float currentTime = 0f;
 
-    private void Update()
+    private void Start()
     {
-        currentTime += Time.deltaTime;
+        fireRate = Random.Range(0.1f, 2f);
+        TimerManager.Create(Fire, fireRate, true);
+    }
 
-        if (currentTime >= fireRate)
-        {
-            var bullet = Get();
-            
-            bullet.transform.position = transform.position;
-            bullet.gameObject.SetActive(true);
-            bullet.Shoot(Vector3.right);
+    private void Fire()
+    {
+        var bullet = Get();
+        
+        bullet.transform.position = transform.position;
+        bullet.gameObject.SetActive(true);
+        bullet.Shoot(Vector3.right);
 
-            currentTime = 0f;
-        }
     }
 }
 
