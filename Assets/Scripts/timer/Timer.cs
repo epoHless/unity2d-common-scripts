@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace epoHless
 {
-    public class Timer
+    public sealed class Timer
     {
         public bool IsPaused { get; private set; }
 
@@ -13,7 +13,7 @@ namespace epoHless
         private readonly float duration;
         private float currentTime;
 
-        public Timer(float duration, Action onComplete, bool looping = false)
+        public Timer(float duration, Action onComplete = null, bool looping = false)
         {
             this.duration = duration;
             currentTime = this.duration;

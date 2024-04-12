@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace epoHless
 {
-    public class TimerManager : MonoBehaviour
+    public sealed class TimerManager : MonoBehaviour
     {
         private static bool IsPersistent => true;
         private static readonly object lockObject = new object();
