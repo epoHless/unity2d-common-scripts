@@ -1,0 +1,34 @@
+{
+    "name": "PlayerActions",
+    "maps": [
+        {
+            "name": "Overworld",
+            "id": "092d20fd-7b67-4f39-a389-7fc526683aee",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "70a91192-95d4-4a73-be4e-49fa35422193",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3a41ed42-4a93-4c73-b28d-0c677f8b5cf7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
